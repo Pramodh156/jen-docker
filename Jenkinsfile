@@ -33,7 +33,7 @@ pipeline {
     stage('Docker Run Tomcat') {
      steps{
          script {
-            dockerImage.run("-p 8091:8080 --rm --name pramodh55")
+            dockerImage.run("-p 8092:8080 --rm --name pramodh23")
          }
      }
     }
