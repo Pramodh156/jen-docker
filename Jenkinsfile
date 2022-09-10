@@ -8,14 +8,14 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git([url: 'https://github.com/Pramodh156/jen-docker.git', branch: ''])
+        git([url: 'https://github.com/Pramodh156/jen-docker.git', branch: 'main'])
 
       }
     }
     stage('Building custom image') {
       steps{
         script {
-          dockerImage = docker.build imagename
+          dockerImage = docker.built imagename
         }
       }
     }
