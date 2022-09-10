@@ -15,14 +15,14 @@ pipeline {
     stage('Building custom image') {
       steps{
         script {
-          dockerImage = docker.built imagename
+          dockerImage = docker.build imagename
         }
       }
     }
     stage('Deploy custom Image') {
       steps{
         script {
-          docker.withRegistry( '', registryCredential ) {
+          docker.withRegistry( '', registryCredenti ) {
             dockerImage.push("$BUILD_NUMBER")
              dockerImage.push('latest')
 
