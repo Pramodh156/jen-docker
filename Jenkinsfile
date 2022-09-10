@@ -22,7 +22,7 @@ pipeline {
     stage('Deploy custom Image') {
       steps{
         script {
-          docker.withRegistry( '', registryCredenti ) {
+          docker.withRegistry( '', registryCredential ) {
             dockerImage.push("$BUILD_NUMBER")
              dockerImage.push('latest')
 
@@ -33,7 +33,7 @@ pipeline {
     stage('Docker Run Tomcat') {
      steps{
          script {
-            dockerImage.run("-p 8093:8080 --rm --name pramodh1")
+            dockerImage.run("-p 8092:8080 --rm --name pramodh1")
          }
      }
     }
